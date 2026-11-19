@@ -1,37 +1,39 @@
 // =====================================================================
 // HHHGroup — Réglages du site
-// Toutes les valeurs ci-dessous sont des valeurs de TEST.
-// Le business plan dit : ne pas fixer le prix final avant 20-30 commandes.
-// => À valider par le porteur de projet avant mise en ligne réelle.
+// Valeurs de TEST : à valider avant mise en ligne réelle.
 // =====================================================================
 window.HHH_CONFIG = {
   marque: "HHHGroup",
-  ville: "Kinshasa",
+  pays: "Congo-Brazzaville",
+  zone: "l'Afrique",
 
-  // Numéro WhatsApp Business (format international, sans + ni espaces).
-  // À REMPLACER par le vrai numéro.
-  whatsapp: "243000000000",
+  // Numéro WhatsApp Business (format international, sans + ni espaces). À REMPLACER.
+  whatsapp: "242000000000",
 
-  devise: "USD",
-  // Taux indicatif pour afficher aussi le prix en francs congolais. À mettre à jour.
-  tauxCDF: 2800,
+  // Le client paie en FCFA
+  devise: "FCFA",
+  // Devises dans lesquelles le client peut saisir le prix vu sur le site marchand
+  devisesProduit: {
+    EUR: { label: "€ Euro", taux: 655.957 },   // parité fixe
+    USD: { label: "$ Dollar", taux: 600 }      // taux de test, à mettre à jour
+  },
 
-  // Frais de service : 30 à 40 % cible (business plan, section 10). Valeur de test.
+  // Frais de service : 30 à 40 % cible (business plan). Valeur de test.
   fraisServicePct: 0.35,
 
-  // Transport international + douane provisionnés, par kg (valeur de test).
-  transportParKg: 12,
+  // Transport international + douane provisionnés, en FCFA par kg (test)
+  transportParKg: 7000,
   poidsMinKg: 0.5,
 
-  // Livraison locale (valeurs de test)
+  // Livraison locale en FCFA (test)
   livraison: {
-    domicile: { label: "Livraison à domicile", prix: 3 },
-    relais: { label: "Point relais (moins cher)", prix: 1 }
+    domicile: { label: "À domicile", detail: "Livré chez toi", prix: 2000 },
+    relais: { label: "Point relais", detail: "Moins cher", prix: 1000 }
   },
 
   delaiStandard: "15 à 25 jours",
 
-  moyensPaiement: ["M-Pesa", "Orange Money", "Airtel Money"],
+  moyensPaiement: ["MTN Mobile Money", "Airtel Money"],
 
-  fournisseurs: ["SHEIN", "AliExpress", "Amazon", "Autre"]
+  fournisseurs: ["SHEIN", "AliExpress", "Amazon", "Temu", "Zara", "Autre"]
 };

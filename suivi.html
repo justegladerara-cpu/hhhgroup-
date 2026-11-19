@@ -4,34 +4,31 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Suivre ma commande — HHHGroup</title>
+<meta name="theme-color" content="#5b2be0">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-<header class="top">
+<header class="top solid">
   <div class="wrap">
-    <a class="logo" href="index.html">HHH<span>Group</span></a>
-    <nav><a href="index.html#commander">Commander</a></nav>
+    <a class="logo" href="index.html"><i>H</i>HHHGroup</a>
+    <a href="index.html#commander" class="btn btn-primary btn-sm">Commander</a>
   </div>
 </header>
 
-<main>
-  <section>
-    <div class="wrap" style="max-width:640px">
-      <h2>Suivre ma commande</h2>
-      <p class="sub">Entre ton numéro de commande (ex : HHH-261119-AB12).</p>
-      <form id="trackForm" class="order">
-        <div class="field">
-          <label for="num">Numéro de commande</label>
-          <input id="num" required placeholder="HHH-......-....">
-        </div>
-        <button class="btn btn-primary" type="submit" style="width:100%">Voir le suivi</button>
-      </form>
-      <div id="trackOut"></div>
-    </div>
-  </section>
+<main class="page">
+  <div class="wrap" style="max-width:640px">
+    <span class="kicker">Suivi</span>
+    <h1 style="font-size:clamp(30px,5vw,44px);letter-spacing:-.03em;margin:10px 0 8px">Où est mon colis ?</h1>
+    <p style="color:var(--muted);margin:0 0 24px">Entre ton numéro de commande (ex : HHH-261119-AB12).</p>
+    <form id="trackForm" class="paste" style="max-width:none">
+      <input id="num" required placeholder="HHH-……-…." aria-label="Numéro de commande">
+      <button class="btn btn-primary" type="submit">Voir le suivi</button>
+    </form>
+    <div id="trackOut"></div>
+  </div>
 </main>
 
-<footer><div class="wrap">© HHHGroup · <a id="waFooter" href="#">Nous écrire sur WhatsApp</a></div></footer>
+<footer><div class="wrap">© <span id="year"></span> HHHGroup · <a data-wa href="#" target="_blank" rel="noopener" style="display:inline">Nous écrire sur WhatsApp</a></div></footer>
 <script src="assets/config.js"></script>
 <script src="assets/app.js"></script>
 </body>

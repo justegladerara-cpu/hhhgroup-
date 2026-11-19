@@ -3,161 +3,299 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>HHHGroup — Achète à l'international, payé en Mobile Money</title>
-<meta name="description" content="Tu choisis, tu paies, nous nous occupons du reste. Commande sur SHEIN et ailleurs, paie en Mobile Money, reçois ton colis à Kinshasa.">
+<title>HHHGroup — Achète sur SHEIN, AliExpress, Amazon… et paie en Mobile Money</title>
+<meta name="description" content="Tu choisis, tu paies en Mobile Money, nous nous occupons du reste : achat, transport, douane et livraison. Au Congo-Brazzaville, et bientôt dans toute l'Afrique.">
+<meta name="theme-color" content="#5b2be0">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
-<header class="top">
+<header class="top" id="top">
   <div class="wrap">
-    <a class="logo" href="index.html">HHH<span>Group</span></a>
-    <nav>
-      <a href="#comment" class="hide-sm">Comment ça marche</a>
-      <a href="#faq" class="hide-sm">FAQ</a>
+    <a class="logo" href="index.html"><i>H</i>HHHGroup</a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <nav class="main" id="menu">
+      <a href="#categories">Catégories</a>
+      <a href="#comment">Comment ça marche</a>
+      <a href="#faq">FAQ</a>
       <a href="suivi.html">Suivre ma commande</a>
+      <a href="#commander" class="btn btn-primary btn-sm">Commander</a>
     </nav>
   </div>
 </header>
 
 <main>
-  <!-- HERO -->
+  <!-- ================= HERO ================= -->
   <section class="hero">
-    <div class="wrap">
-      <span class="eyebrow">Commerce international · <span data-ville>Kinshasa</span></span>
-      <h1>Le shopping international, <em>enfin simple.</em></h1>
-      <p class="lead">Pas de carte bancaire internationale ? Pas d'adresse à l'étranger ? Colle le lien du produit, paie en Mobile Money, on s'occupe de l'achat, du transport et de la douane.</p>
-      <div class="ctas">
-        <a href="#commander" class="btn btn-primary">Commander maintenant</a>
-        <a href="suivi.html" class="btn btn-ghost">Suivre ma commande</a>
-      </div>
-      <p class="promise">« Tu choisis, tu paies, nous nous occupons du reste. »</p>
-    </div>
-  </section>
-
-  <!-- COMMENT ÇA MARCHE -->
-  <section id="comment">
-    <div class="wrap">
-      <h2>Comment ça marche</h2>
-      <p class="sub">Trois gestes pour toi. Tout le reste, c'est nous.</p>
-      <div class="grid g3">
-        <div class="card"><div class="step-n">1</div><h3>Tu choisis</h3><p>Copie le lien du produit sur SHEIN, AliExpress, Amazon… et colle-le ici.</p></div>
-        <div class="card"><div class="step-n">2</div><h3>Tu paies</h3><p>Un seul prix, tout compris, affiché avant de payer. Paiement en Mobile Money.</p></div>
-        <div class="card"><div class="step-n">3</div><h3>Tu reçois</h3><p>Suivi à chaque étape par WhatsApp. Livraison à domicile ou en point relais.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CE QU'ON SUPPRIME -->
-  <section>
-    <div class="wrap">
-      <h2>Ce qu'on règle pour toi</h2>
-      <p class="sub">On ne vend pas des produits. On vend la tranquillité d'acheter à l'international.</p>
-      <table class="pain">
-        <thead><tr><th>Ton problème</th><th>Notre solution</th></tr></thead>
-        <tbody>
-          <tr><td>Pas de carte internationale</td><td>Paiement 100 % local en Mobile Money</td></tr>
-          <tr><td>Le site ne livre pas au Congo</td><td>On reçoit le colis pour toi et on l'achemine</td></tr>
-          <tr><td>Peur de l'arnaque</td><td>Une marque, un numéro de commande, un suivi</td></tr>
-          <tr><td>Aucune nouvelle du colis</td><td>Notification à chaque étape, sans relancer</td></tr>
-          <tr><td>Douane compliquée</td><td>On gère tout, c'est invisible pour toi</td></tr>
-          <tr><td>Prix qui change à l'arrivée</td><td>Un seul prix final, annoncé avant paiement</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <!-- COMMANDER -->
-  <section id="commander">
-    <div class="wrap">
-      <h2>Commander</h2>
-      <p class="sub">Remplis le formulaire. Tu vois le prix total tout de suite. On confirme sur WhatsApp et tu paies en Mobile Money.</p>
-
-      <div class="grid g2" style="align-items:start">
-        <form class="order" id="orderForm" novalidate>
-          <div class="field">
-            <label for="lien">Lien du produit</label>
-            <input id="lien" name="lien" type="url" placeholder="https://fr.shein.com/..." required>
-          </div>
-          <div class="row">
-            <div class="field">
-              <label for="fournisseur">Site</label>
-              <select id="fournisseur" name="fournisseur"></select>
-            </div>
-            <div class="field">
-              <label for="quantite">Quantité</label>
-              <input id="quantite" name="quantite" type="number" min="1" value="1" required>
-            </div>
-          </div>
-          <div class="row">
-            <div class="field">
-              <label for="prix">Prix sur le site (<span data-devise>USD</span>)</label>
-              <input id="prix" name="prix" type="number" min="0" step="0.01" placeholder="ex : 19.99" required>
-              <small>Prix unitaire affiché sur le site</small>
-            </div>
-            <div class="field">
-              <label for="poids">Poids estimé (kg)</label>
-              <input id="poids" name="poids" type="number" min="0" step="0.1" value="0.5">
-              <small>Vêtement ≈ 0,3 kg · chaussures ≈ 1 kg</small>
-            </div>
-          </div>
-          <div class="field">
-            <label for="details">Taille, couleur, remarques</label>
-            <input id="details" name="details" placeholder="ex : taille M, noir">
-          </div>
-          <div class="field">
-            <label>Livraison</label>
-            <div class="radio-group" id="livraisonGroup"></div>
-          </div>
-          <div class="row">
-            <div class="field">
-              <label for="nom">Ton nom</label>
-              <input id="nom" name="nom" required autocomplete="name">
-            </div>
-            <div class="field">
-              <label for="tel">Ton numéro WhatsApp</label>
-              <input id="tel" name="tel" type="tel" placeholder="+243 ..." required autocomplete="tel">
-            </div>
-          </div>
-          <div class="field">
-            <label for="paiement">Je paierai avec</label>
-            <select id="paiement" name="paiement"></select>
-          </div>
-          <div class="field" id="adresseField">
-            <label for="adresse">Adresse / commune</label>
-            <input id="adresse" name="adresse" placeholder="ex : Gombe, avenue ...">
-          </div>
-          <button class="btn btn-wa" type="submit" style="width:100%">Envoyer ma commande sur WhatsApp</button>
-          <div class="msg" id="formMsg"></div>
+    <div class="wrap hero-grid">
+      <div>
+        <span class="pill reveal"><b>Nouveau</b> Paiement en Mobile Money · <span data-pays></span></span>
+        <h1 class="reveal d1">Achète sur <span class="rotator" id="rotator"><span class="grad-text">SHEIN</span></span><br>sans carte bancaire.</h1>
+        <p class="lead reveal d2">Colle le lien du produit, vois ton prix final tout de suite, paie en Mobile Money. Achat, transport, douane, livraison : on s'occupe de tout.</p>
+        <form class="paste reveal d3" id="heroPaste">
+          <input id="heroLink" type="url" placeholder="Colle ici le lien du produit…" aria-label="Lien du produit">
+          <button class="btn btn-primary" type="submit">Voir mon prix →</button>
         </form>
+        <div class="trust reveal d4">
+          <span>Prix tout compris</span><span>Suivi WhatsApp</span><span>Sans carte bancaire</span>
+        </div>
+      </div>
 
-        <aside class="total" aria-live="polite">
-          <span class="badge">Prix tout compris</span>
-          <div class="big" id="totalUsd">—</div>
-          <div class="cdf" id="totalCdf"></div>
+      <div class="phone-wrap reveal d2">
+        <div class="phone" aria-hidden="true">
+          <div class="screen">
+            <div class="bar"><b>Ma commande</b><span class="tag">Exemple</span></div>
+            <div class="prod">
+              <div class="img">👗</div>
+              <div><strong>Robe d'été</strong><small>SHEIN · Taille M</small></div>
+              <div class="price" id="mockPrice">—</div>
+            </div>
+            <div class="track" id="mockTrack">
+              <div class="st"><i></i>Commande reçue</div>
+              <div class="st"><i></i>Paiement Mobile Money</div>
+              <div class="st"><i></i>Achat chez SHEIN</div>
+              <div class="st"><i></i>En transit</div>
+              <div class="st"><i></i>Dédouanement</div>
+              <div class="st"><i></i>En livraison</div>
+              <div class="st"><i></i>Livré 🎉</div>
+            </div>
+          </div>
+        </div>
+        <div class="toast hide" id="mockToast">
+          <span class="wa"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Z"/></svg></span>
+          <div><b>HHHGroup</b><span id="mockToastText">Ta commande est confirmée ✅</span></div>
+        </div>
+        <p class="mock-note">Aperçu d'un suivi de commande</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MARQUEE ================= -->
+  <div class="marquee" aria-label="Sites où tu peux acheter">
+    <div class="track-m" id="marquee"></div>
+  </div>
+
+  <!-- ================= CATEGORIES ================= -->
+  <section class="s" id="categories">
+    <div class="wrap">
+      <div class="center">
+        <span class="kicker reveal">Tout ce que tu veux</span>
+        <h2 class="reveal d1">Qu'est-ce qui te fait envie ?</h2>
+        <p class="sub reveal d2">Choisis une catégorie, trouve ton article sur ton site préféré, puis reviens coller le lien.</p>
+      </div>
+      <div class="grid g6">
+        <button class="cat c1 reveal" data-cat="Mode femme"><span class="e">👗</span><b>Mode femme</b><small>Robes, tops, sacs</small></button>
+        <button class="cat c2 reveal d1" data-cat="Beauté"><span class="e">💄</span><b>Beauté</b><small>Make-up, soins</small></button>
+        <button class="cat c3 reveal d2" data-cat="Tech"><span class="e">🎧</span><b>Tech</b><small>Écouteurs, accessoires</small></button>
+        <button class="cat c4 reveal d3" data-cat="Maison"><span class="e">🛋️</span><b>Maison</b><small>Déco, cuisine</small></button>
+        <button class="cat c5 reveal d4" data-cat="Enfants"><span class="e">🧸</span><b>Enfants</b><small>Vêtements, jouets</small></button>
+        <button class="cat c6 reveal d5" data-cat="Mode homme"><span class="e">👟</span><b>Mode homme</b><small>Baskets, chemises</small></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= COMMENT ================= -->
+  <section class="s" id="comment" style="padding-top:20px">
+    <div class="wrap">
+      <span class="kicker reveal">Comment ça marche</span>
+      <h2 class="reveal d1">3 gestes pour toi.<br><span class="grad-text">Tout le reste, c'est nous.</span></h2>
+      <p class="sub reveal d2">« Tu choisis, tu paies, nous nous occupons du reste. »</p>
+      <div class="grid g3">
+        <div class="card step reveal"><div class="n">01</div><h3>Tu choisis</h3><p>Trouve ton article sur SHEIN, AliExpress, Amazon… Copie le lien et colle-le ici.</p></div>
+        <div class="card step reveal d1"><div class="n">02</div><h3>Tu paies</h3><p>Un seul prix final en FCFA, affiché avant de payer. Paiement en <span data-paiements></span>.</p></div>
+        <div class="card step reveal d2"><div class="n">03</div><h3>Tu reçois</h3><p>On achète, on expédie, on dédouane. Tu suis chaque étape sur WhatsApp jusqu'à la livraison.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= POURQUOI ================= -->
+  <section class="s" style="padding-top:20px">
+    <div class="wrap">
+      <span class="kicker reveal">Pourquoi HHHGroup</span>
+      <h2 class="reveal d1">Fini les revendeurs sans garantie.</h2>
+      <p class="sub reveal d2">Une vraie marque, un numéro de commande, un suivi. Tu sais toujours où est ton colis.</p>
+      <div class="grid g3" style="margin-bottom:40px">
+        <div class="card reveal"><div class="ico">📱</div><h3>Mobile Money</h3><p>Pas besoin de carte Visa ou Mastercard. Tu paies comme tous les jours.</p></div>
+        <div class="card reveal d1"><div class="ico">💯</div><h3>Prix tout compris</h3><p>Produit, transport, douane et livraison. Le prix annoncé est le prix payé.</p></div>
+        <div class="card reveal d2"><div class="ico">📦</div><h3>Suivi à chaque étape</h3><p>Une notification WhatsApp à chaque étape, sans avoir à relancer.</p></div>
+      </div>
+      <div class="table-wrap reveal">
+        <table class="compare">
+          <thead><tr><th></th><th class="us">HHHGroup</th><th>Revendeur informel</th><th>Acheter seul</th></tr></thead>
+          <tbody>
+            <tr><td>Paiement sans carte bancaire</td><td class="us yes">✓</td><td class="yes">✓</td><td class="no">✗</td></tr>
+            <tr><td>Prix final annoncé avant paiement</td><td class="us yes">✓</td><td class="no">✗</td><td class="no">✗</td></tr>
+            <tr><td>Numéro de commande et suivi</td><td class="us yes">✓</td><td class="no">✗</td><td>Partiel</td></tr>
+            <tr><td>Douane gérée pour toi</td><td class="us yes">✓</td><td>Parfois</td><td class="no">✗</td></tr>
+            <tr><td>Livraison à domicile ou point relais</td><td class="us yes">✓</td><td>Parfois</td><td class="no">✗</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= COMMANDER ================= -->
+  <section class="order-sec" id="commander">
+    <div class="wrap">
+      <span class="kicker">Commander</span>
+      <h2 style="font-size:clamp(30px,4.2vw,46px);letter-spacing:-.03em;margin:10px 0 12px">Ton prix final en 1 minute.</h2>
+      <p class="sub">Remplis les 3 étapes. Le prix se met à jour en direct.</p>
+
+      <div class="wizard">
+        <div class="panel">
+          <div class="progress" id="progress">
+            <div class="cur"><div class="bar"><i></i></div><small>1. Produit</small></div>
+            <div><div class="bar"><i></i></div><small>2. Livraison</small></div>
+            <div><div class="bar"><i></i></div><small>3. Tes infos</small></div>
+          </div>
+
+          <form id="orderForm" novalidate>
+            <!-- Étape 1 -->
+            <div class="stepper active" data-step="0">
+              <h3>Ton produit</h3>
+              <div class="field">
+                <label for="lien">Lien du produit</label>
+                <input id="lien" type="url" placeholder="https://…" autocomplete="off">
+              </div>
+              <div class="field">
+                <span class="lbl">Site</span>
+                <div class="chips" id="sites"></div>
+              </div>
+              <div class="row">
+                <div class="field">
+                  <label for="prix">Prix sur le site</label>
+                  <div class="price-in">
+                    <input id="prix" type="number" min="0" step="0.01" placeholder="19.99" inputmode="decimal">
+                    <select id="deviseProduit" aria-label="Devise"></select>
+                  </div>
+                  <small>Prix d'un article</small>
+                </div>
+                <div class="field">
+                  <label for="quantite">Quantité</label>
+                  <div class="qty">
+                    <button type="button" data-q="-1" aria-label="Moins">−</button>
+                    <input id="quantite" type="number" min="1" value="1" inputmode="numeric">
+                    <button type="button" data-q="1" aria-label="Plus">+</button>
+                  </div>
+                </div>
+              </div>
+              <div class="field">
+                <span class="lbl">Type d'article (pour estimer le poids)</span>
+                <div class="chips" id="poidsChips"></div>
+              </div>
+              <div class="field">
+                <label for="details">Taille, couleur, remarques</label>
+                <input id="details" placeholder="ex : taille M, noir">
+              </div>
+              <div class="err" data-err="0"></div>
+              <div class="nav-btns"><span></span><button type="button" class="btn btn-dark" data-next>Continuer →</button></div>
+            </div>
+
+            <!-- Étape 2 -->
+            <div class="stepper" data-step="1">
+              <h3>Livraison</h3>
+              <div class="field"><div class="opt" id="livraisons"></div></div>
+              <div class="field" id="adresseField">
+                <label for="ville">Ville</label>
+                <input id="ville" placeholder="ex : Brazzaville">
+              </div>
+              <div class="field" id="adresseField2">
+                <label for="adresse">Quartier / adresse</label>
+                <input id="adresse" placeholder="ex : Bacongo, rue …">
+              </div>
+              <div class="err" data-err="1"></div>
+              <div class="nav-btns"><button type="button" class="btn btn-light" data-prev>← Retour</button><button type="button" class="btn btn-dark" data-next>Continuer →</button></div>
+            </div>
+
+            <!-- Étape 3 -->
+            <div class="stepper" data-step="2">
+              <h3>Tes infos</h3>
+              <div class="row">
+                <div class="field"><label for="nom">Ton nom</label><input id="nom" autocomplete="name"></div>
+                <div class="field"><label for="tel">Ton numéro WhatsApp</label><input id="tel" type="tel" placeholder="+242 …" autocomplete="tel"></div>
+              </div>
+              <div class="field">
+                <span class="lbl">Je paierai avec</span>
+                <div class="chips" id="paiements"></div>
+              </div>
+              <div class="err" data-err="2"></div>
+              <div class="nav-btns"><button type="button" class="btn btn-light" data-prev>← Retour</button><button type="submit" class="btn btn-wa">Envoyer sur WhatsApp</button></div>
+            </div>
+
+            <!-- Succès -->
+            <div class="stepper" data-step="3">
+              <div class="success">
+                <div class="big-ico">✓</div>
+                <h3>Commande prête !</h3>
+                <p style="color:var(--muted);margin:0">Ton numéro de commande :</p>
+                <code id="numOut"></code>
+                <p style="color:var(--muted)">WhatsApp s'est ouvert avec ta commande. Envoie le message : on te confirme et on t'envoie le numéro de paiement Mobile Money.</p>
+                <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+                  <a class="btn btn-wa" id="waAgain" target="_blank" rel="noopener">Rouvrir WhatsApp</a>
+                  <a class="btn btn-light" id="trackLink" href="suivi.html">Suivre ma commande</a>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <aside class="summary" aria-live="polite">
+          <div class="lab">Ton prix final</div>
+          <div class="big" id="total">0 FCFA</div>
           <ul id="breakdown"></ul>
-          <p class="note">Produit, service, transport international, douane et livraison locale inclus. Délai standard : <span data-delai>15 à 25 jours</span>.</p>
+          <div class="ok">✓ Transport, douane et livraison inclus</div>
+          <div class="ok">✓ Délai standard : <span data-delai></span></div>
+          <p class="note">Prix confirmé sur WhatsApp avant paiement. Aucun frais caché.</p>
         </aside>
       </div>
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section id="faq">
+  <!-- ================= FAQ ================= -->
+  <section class="s" id="faq">
     <div class="wrap">
-      <h2>Questions fréquentes</h2>
-      <details><summary>Comment je paie ?</summary><p>En Mobile Money (<span data-paiements></span>). On t'envoie le numéro de paiement sur WhatsApp après confirmation de ta commande.</p></details>
-      <details><summary>Le prix peut-il changer après ?</summary><p>Non. Le prix confirmé sur WhatsApp est le prix final : produit, transport, douane et livraison compris.</p></details>
-      <details><summary>Combien de temps pour recevoir mon colis ?</summary><p>Livraison standard : <span data-delai>15 à 25 jours</span>. Tu reçois une notification à chaque étape.</p></details>
-      <details><summary>Comment je suis ma commande ?</summary><p>Avec ton numéro de commande sur la page <a href="suivi.html">Suivre ma commande</a>, ou directement sur WhatsApp.</p></details>
-      <details><summary>Et si l'article ne correspond pas ?</summary><p>Notre politique de retour t'est communiquée avant le paiement. Contacte-nous sur WhatsApp avec ton numéro de commande.</p></details>
+      <div class="center">
+        <span class="kicker reveal">FAQ</span>
+        <h2 class="reveal d1">Tes questions, nos réponses</h2>
+        <p class="sub reveal d2">Une autre question ? Écris-nous sur WhatsApp.</p>
+      </div>
+      <div class="faq">
+        <details class="reveal"><summary>Comment je paie ?</summary><p>En Mobile Money (<span data-paiements></span>). Après confirmation de ta commande sur WhatsApp, on t'envoie le numéro de paiement.</p></details>
+        <details class="reveal"><summary>Le prix peut-il changer après ?</summary><p>Non. Le prix confirmé sur WhatsApp est le prix final : produit, service, transport, douane et livraison compris.</p></details>
+        <details class="reveal"><summary>Combien de temps pour recevoir mon colis ?</summary><p>Livraison standard : <span data-delai></span>. Tu reçois une notification à chaque étape.</p></details>
+        <details class="reveal"><summary>Sur quels sites je peux commander ?</summary><p><span data-sites></span>. Si ton site n'est pas dans la liste, envoie-nous le lien quand même.</p></details>
+        <details class="reveal"><summary>Où livrez-vous ?</summary><p>Au <span data-pays></span> pour commencer, à domicile ou en point relais. D'autres pays d'Afrique arrivent ensuite.</p></details>
+        <details class="reveal"><summary>Et si l'article ne correspond pas ?</summary><p>Notre politique de retour t'est expliquée avant le paiement. Contacte-nous sur WhatsApp avec ton numéro de commande.</p></details>
+      </div>
     </div>
   </section>
+
+  <div class="wrap">
+    <div class="band reveal">
+      <h2>Ton prochain colis t'attend.</h2>
+      <p>Colle un lien, découvre ton prix. C'est gratuit et sans engagement.</p>
+      <a href="#commander" class="btn btn-light">Commencer ma commande</a>
+    </div>
+  </div>
 </main>
 
 <footer>
-  <div class="wrap">© <span id="year"></span> HHHGroup · <span data-ville>Kinshasa</span> · <a id="waFooter" href="#">Nous écrire sur WhatsApp</a></div>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="logo" href="index.html"><i>H</i>HHHGroup</a>
+        <p style="max-width:40ch">Le commerce international, enfin simple. Au <span data-pays></span>, et bientôt partout en Afrique.</p>
+      </div>
+      <div><b>Liens</b><a href="#commander">Commander</a><a href="suivi.html">Suivre ma commande</a><a href="#faq">FAQ</a></div>
+      <div><b>Contact</b><a data-wa href="#" target="_blank" rel="noopener">WhatsApp</a></div>
+    </div>
+    <div class="bottom">© <span id="year"></span> HHHGroup. Tous droits réservés.</div>
+  </div>
 </footer>
+
+<a class="fab" data-wa href="#" target="_blank" rel="noopener" aria-label="Nous écrire sur WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-5.9c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8 1c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .1-1.2c0-.1-.2-.2-.4-.3Z"/></svg>
+</a>
 
 <script src="assets/config.js"></script>
 <script src="assets/app.js"></script>
