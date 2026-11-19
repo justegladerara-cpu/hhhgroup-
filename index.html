@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HHHGroup — Achète à l'international, payé en Mobile Money</title>
+<meta name="description" content="Tu choisis, tu paies, nous nous occupons du reste. Commande sur SHEIN et ailleurs, paie en Mobile Money, reçois ton colis à Kinshasa.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="index.html">HHH<span>Group</span></a>
+    <nav>
+      <a href="#comment" class="hide-sm">Comment ça marche</a>
+      <a href="#faq" class="hide-sm">FAQ</a>
+      <a href="suivi.html">Suivre ma commande</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow">Commerce international · <span data-ville>Kinshasa</span></span>
+      <h1>Le shopping international, <em>enfin simple.</em></h1>
+      <p class="lead">Pas de carte bancaire internationale ? Pas d'adresse à l'étranger ? Colle le lien du produit, paie en Mobile Money, on s'occupe de l'achat, du transport et de la douane.</p>
+      <div class="ctas">
+        <a href="#commander" class="btn btn-primary">Commander maintenant</a>
+        <a href="suivi.html" class="btn btn-ghost">Suivre ma commande</a>
+      </div>
+      <p class="promise">« Tu choisis, tu paies, nous nous occupons du reste. »</p>
+    </div>
+  </section>
+
+  <!-- COMMENT ÇA MARCHE -->
+  <section id="comment">
+    <div class="wrap">
+      <h2>Comment ça marche</h2>
+      <p class="sub">Trois gestes pour toi. Tout le reste, c'est nous.</p>
+      <div class="grid g3">
+        <div class="card"><div class="step-n">1</div><h3>Tu choisis</h3><p>Copie le lien du produit sur SHEIN, AliExpress, Amazon… et colle-le ici.</p></div>
+        <div class="card"><div class="step-n">2</div><h3>Tu paies</h3><p>Un seul prix, tout compris, affiché avant de payer. Paiement en Mobile Money.</p></div>
+        <div class="card"><div class="step-n">3</div><h3>Tu reçois</h3><p>Suivi à chaque étape par WhatsApp. Livraison à domicile ou en point relais.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CE QU'ON SUPPRIME -->
+  <section>
+    <div class="wrap">
+      <h2>Ce qu'on règle pour toi</h2>
+      <p class="sub">On ne vend pas des produits. On vend la tranquillité d'acheter à l'international.</p>
+      <table class="pain">
+        <thead><tr><th>Ton problème</th><th>Notre solution</th></tr></thead>
+        <tbody>
+          <tr><td>Pas de carte internationale</td><td>Paiement 100 % local en Mobile Money</td></tr>
+          <tr><td>Le site ne livre pas au Congo</td><td>On reçoit le colis pour toi et on l'achemine</td></tr>
+          <tr><td>Peur de l'arnaque</td><td>Une marque, un numéro de commande, un suivi</td></tr>
+          <tr><td>Aucune nouvelle du colis</td><td>Notification à chaque étape, sans relancer</td></tr>
+          <tr><td>Douane compliquée</td><td>On gère tout, c'est invisible pour toi</td></tr>
+          <tr><td>Prix qui change à l'arrivée</td><td>Un seul prix final, annoncé avant paiement</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- COMMANDER -->
+  <section id="commander">
+    <div class="wrap">
+      <h2>Commander</h2>
+      <p class="sub">Remplis le formulaire. Tu vois le prix total tout de suite. On confirme sur WhatsApp et tu paies en Mobile Money.</p>
+
+      <div class="grid g2" style="align-items:start">
+        <form class="order" id="orderForm" novalidate>
+          <div class="field">
+            <label for="lien">Lien du produit</label>
+            <input id="lien" name="lien" type="url" placeholder="https://fr.shein.com/..." required>
+          </div>
+          <div class="row">
+            <div class="field">
+              <label for="fournisseur">Site</label>
+              <select id="fournisseur" name="fournisseur"></select>
+            </div>
+            <div class="field">
+              <label for="quantite">Quantité</label>
+              <input id="quantite" name="quantite" type="number" min="1" value="1" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="field">
+              <label for="prix">Prix sur le site (<span data-devise>USD</span>)</label>
+              <input id="prix" name="prix" type="number" min="0" step="0.01" placeholder="ex : 19.99" required>
+              <small>Prix unitaire affiché sur le site</small>
+            </div>
+            <div class="field">
+              <label for="poids">Poids estimé (kg)</label>
+              <input id="poids" name="poids" type="number" min="0" step="0.1" value="0.5">
+              <small>Vêtement ≈ 0,3 kg · chaussures ≈ 1 kg</small>
+            </div>
+          </div>
+          <div class="field">
+            <label for="details">Taille, couleur, remarques</label>
+            <input id="details" name="details" placeholder="ex : taille M, noir">
+          </div>
+          <div class="field">
+            <label>Livraison</label>
+            <div class="radio-group" id="livraisonGroup"></div>
+          </div>
+          <div class="row">
+            <div class="field">
+              <label for="nom">Ton nom</label>
+              <input id="nom" name="nom" required autocomplete="name">
+            </div>
+            <div class="field">
+              <label for="tel">Ton numéro WhatsApp</label>
+              <input id="tel" name="tel" type="tel" placeholder="+243 ..." required autocomplete="tel">
+            </div>
+          </div>
+          <div class="field">
+            <label for="paiement">Je paierai avec</label>
+            <select id="paiement" name="paiement"></select>
+          </div>
+          <div class="field" id="adresseField">
+            <label for="adresse">Adresse / commune</label>
+            <input id="adresse" name="adresse" placeholder="ex : Gombe, avenue ...">
+          </div>
+          <button class="btn btn-wa" type="submit" style="width:100%">Envoyer ma commande sur WhatsApp</button>
+          <div class="msg" id="formMsg"></div>
+        </form>
+
+        <aside class="total" aria-live="polite">
+          <span class="badge">Prix tout compris</span>
+          <div class="big" id="totalUsd">—</div>
+          <div class="cdf" id="totalCdf"></div>
+          <ul id="breakdown"></ul>
+          <p class="note">Produit, service, transport international, douane et livraison locale inclus. Délai standard : <span data-delai>15 à 25 jours</span>.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <h2>Questions fréquentes</h2>
+      <details><summary>Comment je paie ?</summary><p>En Mobile Money (<span data-paiements></span>). On t'envoie le numéro de paiement sur WhatsApp après confirmation de ta commande.</p></details>
+      <details><summary>Le prix peut-il changer après ?</summary><p>Non. Le prix confirmé sur WhatsApp est le prix final : produit, transport, douane et livraison compris.</p></details>
+      <details><summary>Combien de temps pour recevoir mon colis ?</summary><p>Livraison standard : <span data-delai>15 à 25 jours</span>. Tu reçois une notification à chaque étape.</p></details>
+      <details><summary>Comment je suis ma commande ?</summary><p>Avec ton numéro de commande sur la page <a href="suivi.html">Suivre ma commande</a>, ou directement sur WhatsApp.</p></details>
+      <details><summary>Et si l'article ne correspond pas ?</summary><p>Notre politique de retour t'est communiquée avant le paiement. Contacte-nous sur WhatsApp avec ton numéro de commande.</p></details>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© <span id="year"></span> HHHGroup · <span data-ville>Kinshasa</span> · <a id="waFooter" href="#">Nous écrire sur WhatsApp</a></div>
+</footer>
+
+<script src="assets/config.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

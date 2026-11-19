@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Suivre ma commande — HHHGroup</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="index.html">HHH<span>Group</span></a>
+    <nav><a href="index.html#commander">Commander</a></nav>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="wrap" style="max-width:640px">
+      <h2>Suivre ma commande</h2>
+      <p class="sub">Entre ton numéro de commande (ex : HHH-261119-AB12).</p>
+      <form id="trackForm" class="order">
+        <div class="field">
+          <label for="num">Numéro de commande</label>
+          <input id="num" required placeholder="HHH-......-....">
+        </div>
+        <button class="btn btn-primary" type="submit" style="width:100%">Voir le suivi</button>
+      </form>
+      <div id="trackOut"></div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">© HHHGroup · <a id="waFooter" href="#">Nous écrire sur WhatsApp</a></div></footer>
+<script src="assets/config.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
